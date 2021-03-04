@@ -1,0 +1,293 @@
+\documentclass[11pt]{article}
+\usepackage[danish]{babel} % danske bogstaver
+\usepackage{graphicx} % billeder
+\usepackage{float} % H
+\usepackage{amsmath} % brøker
+\usepackage{listings} % listning af kode
+\usepackage{enumerate} % for at anvende egne betegnelser på lister
+\usepackage{url} % for at anvende URL i referencer
+\usepackage{subcaption} % for at have to billeder/figurer ved siden af hinanden
+\usepackage{caption} % for at have to tabeller ved siden af hinanden
+\begin{document}
+
+\begin{titlepage}
+\title{Skabelon til bachelor projekt}
+\author{Frederikke Simone Koefoed Nilsson}
+\maketitle
+\thispagestyle{empty} % sørger for at sidetal er fjernet fra forside
+\end{titlepage}
+
+\tableofcontents
+\clearpage % rykker alt indhold efter indholdsfortegnelse til næste side
+
+\section{Grafisk}
+I dette afsnit vises hvordan man behandler billeder ift. billedtekst, etiketter og centeres.
+
+\subsection{Billedetekst}
+Man kan tilføje billedetekst til et billede ved at anvende \textbf{caption}. Alt efter hvor \textbf{caption} placeres vil billedeteksten enten være under eller over billedet. 
+
+\subsubsection{Billedetekst under billede}
+\begin{figure}[H] % H betyder at billede skal sættes HER i teksten
+\centering
+\includegraphics[width=2cm]{carlaogbella}
+\caption{Billedetekst under billede}
+\end{figure}
+
+\subsubsection{Billedetekst over billede}
+\begin{figure}[H] 
+\centering
+\caption{Billedetekst over billede}
+\includegraphics[width=2cm]{carlaogbella}
+\end{figure}
+
+\subsection{Etiket}
+Man kan tilføje en etiket/label på et billede i tilfælde af, at man ønsker at henvise til figuren senere hen.
+
+\begin{figure}[H] 
+\centering
+\includegraphics[width=2cm]{carlaogbella}
+\caption{Dette billede indeholder label/etiket}
+\label{fig:carlaogbella} % denne figur henvisning til gennem fig:fcarlaogbella
+\end{figure}
+\subsection{Centrering}
+Der er flere måder man kan centrerer et billede på.\\\\
+\textbf{Mulighed 1:}
+\begin{center}
+\includegraphics[width=2cm]{carlaogbella}
+\end{center}
+\textbf{Mulighed 2:}
+\begin{figure}[H]
+\centering
+\includegraphics[width=2cm]{carlaogbella}
+\end{figure}
+
+\subsection{To billeder ved siden af hinanden}
+\begin{figure}[H]
+\begin{subfigure}{0.5\textwidth}
+\centering
+\includegraphics[width=2cm]{carlaogbella}
+\caption{Carla og Bella 1}
+\label{fig:hunde1} 
+\end{subfigure}
+\begin{subfigure}{0.5\textwidth}
+\centering
+\includegraphics[width=2cm]{carlaogbella}
+\caption{Carla og Bella 2}
+\label{fig:hunde2} 
+\end{subfigure}
+\label{fig:image}
+\end{figure}
+
+\section{Henvisning til billede}
+Man kan henvise til en figur ved at anvende: backslash + ref. Dog er det kun nummeret på figuren som fremgår og man skal derfor selv husk at skrive "figur" for at det giver mening.\\\\
+\textbf{Eksempel:}\\ 
+I denne sætning henviser jeg til figur \textbf{\ref{fig:carlaogbella}}, som indeholder billedet af mig.
+
+\section{Henvisning til side, som indeholder billedet}
+Man kan henvise til den side, som indeholder det billede/figur ved at anvende: backslash + pageref. \\\\
+\textbf{Eksempel:}\\
+I denne sætning henviser jeg til den side \textbf{\pageref{fig:carlaogbella}}, som indeholder billedet af mig.
+\clearpage
+\section{Afsnit}
+Det er muligt at anvende diverse afsnit-former. Hvis man anvender et udtryk, som indeholder section vil det højest sandsynligt blive en del af indholdsfortegnelsen. Man anvender \textbf{section}, når man ønsker et nyt afsnit og \textbf{subsection}, når man ønsker et under afsnit. Derudover er det muligt, at anvende \textbf{subsubsection}, hvis man ønsker et yderligere underafsnit. Udover at anvende section, subsection og subsubsection er det muligt, at anvende \textbf{paragraph}, hvis man ønsker at lave en paragraf, samt en \textbf{subparagraph}, hvis man ønsker at lave en under paragraf.
+
+\subsection{Nummereret afsnit}
+Hvis man ønsker at sine afsnit er nummererede skal man ikke gøre yderligere.
+
+\subsection*{Ikke-nummereret afsnit}
+Hvis man ønsker at sine afsnit ikke er nummerede skal man anvende \textbf{* efter section}. 
+\clearpage
+
+\section{Lister}
+I dette afsnit vil jeg gennemgå diverse liste-typer, heraf tal, bogstave, punkter m.m.
+\subsection{Punkter}
+Man kan lave en punkttegns liste ved at anvende \textbf{itemize} og gøre følgende:
+\begin{itemize}
+\item Frederikke
+\item Simone
+\item Thomas
+\item Søren
+\end{itemize}
+\subsection{Tal}
+Man kan lave en nummereret liste ved at anvende \textbf{enumerate} og gøre følgende: 
+\begin{enumerate}
+\item Frederikke
+\item Simone
+\item Thomas
+\item Søren
+\end{enumerate}
+\subsection{Bogstaver}
+Man kan selv bestemme hvordan ens liste skal tælle op ad ved at tilføje den ønskede type i parentes - dvs. det er muligt at anvende andet end bogstaver. \\\\
+\textbf{Mulighed 1:}
+\begin{enumerate}[A.]
+\item Frederikke
+\item Simone
+\item Thomas
+\item Søren
+\end{enumerate}
+\vspace{0.5cm}
+\textbf{Mulighed 2:}
+\begin{enumerate}[a.]
+\item Frederikke
+\item Simone
+\item Thomas
+\item Søren
+\end{enumerate}
+\subsection{2-i-1}
+\begin{enumerate}
+\item Mandag
+	\begin{itemize}
+	\item Skole 08:30-12:00
+	\item Mødes med studiegruppe klokken 16
+	\end{itemize}
+\item Tirsdag
+\item Onsdag
+\item Torsdag
+\item Fredag
+	\begin{itemize}
+	\item Ud og danse
+	\end{itemize}
+\item Lørdag
+\item Søndag
+\end{enumerate}
+\clearpage
+
+\section{Tabeller}
+I dette afsnit vil jeg vise hvordan man laver diverse tabeller. Det er muligt at finde tabeller som både indeholder sætninger og tal. 
+
+\subsection{Centeret tabel med forskellige vandrette justeringer}
+\begin{table}[H]
+\centering
+\begin{tabular}{|p{0.5cm}|p{2cm}|p{1cm}|p{6cm}|} % p står for paragraph 
+\hline
+Nr&Navn&Alder&Beskrivelse\\ \hline %hline is a vandret linje (horonzontal)
+1&Frederikke&25 år &Læser professionsbachelor i softwareudvikling på Copenhagen Business Academy.\\ \hline
+2&Malene&23 år&Læser professionsbachelor i webudvikling på KEA. \\ \hline
+\end{tabular}
+\end{table}
+
+\subsection{Celle som spænder over flere kolonner}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|p{0.5cm}|p{2cm}|p{1cm}|p{6cm}|} % p står for paragraph 
+\hline
+\multicolumn{4}{|c|}{Oversigt}\\
+\hline
+Nr&Navn&Alder&Beskrivelse\\ \hline %hline is a vandret linje (horonzontal)
+1&Frederikke&25 år &Læser professionsbachelor i softwareudvikling på Copenhagen Business Academy.\\ \hline
+2&Malene&23 år&Læser professionsbachelor i webudvikling på KEA. \\ \hline
+\end{tabular}
+\end{table}
+
+\subsection{Lodret justering i celler}
+Hvis der er behov for at justere lodret i en celle kan man anvende \textbf{arraystretch}. Et eksempel på dette kunne være at tabellen indeholdt brøker. \\\\
+
+\begin{table}[H]
+\begin{subtable}[h]{0.45\textwidth}
+\centering
+\begin{tabular}{|c||c|c|c|c|c|} % c stands for centeret r for right aligned l for left aligned
+\hline
+$x$&1&2&3&4&5\\ \hline %hline is a vandret linje (horonzontal)
+$f(x)$&\(\frac{1}{2}\)&11&12&13&14\\ \hline
+\end{tabular}
+\caption{Før justering}
+\end{subtable}
+\begin{subtable}[h]{0.45\textwidth}
+\def\arraystretch{1.5} 
+\begin{tabular}{|c||c|c|c|c|c|} % c stands for centeret r for right aligned l for left aligned
+
+\hline
+$x$&1&2&3&4&5\\ \hline %hline is a vandret linje (horonzontal)
+$f(x)$&\(\frac{1}{2}\)&11&12&13&14\\ \hline
+\end{tabular}
+\caption{Efter justering}
+\end{subtable}
+\end{table}
+
+\subsection{Tabel beskrivelse og etiket}
+Det er muligt at tilføje en tabeltekst under og over en tabel og kan gøres ved at anvende \textbf{caption} over eller under \textbf{tabular}. Derudover er det muligt at tilføje en label/etiket på en tabel, hvis man ønsker at kunne henvise senere hen. Dette gøres ved at anvende \textbf{label}.
+\begin{table}[H]
+\centering
+\def\arraystretch{1.5} 
+\begin{tabular}{|c||c|c|c|c|c|} % c stands for centeret r for right aligned l for left aligned
+\hline
+$x$&1&2&3&4&5\\ \hline %hline is a vandret linje (horonzontal)
+$f(x)$&10&11&12&13&14\\ \hline
+\end{tabular}
+\caption{Tabeltekst under tabel}
+\label{tab:tal}
+\end{table}
+
+
+\subsection{Henvisning til tabel}
+Man henviser til en tabel gennem \textbf{backslash + ref} efterfulgt af ens etiket, som vil angive tallet på den tabel der henvises til. \\\\
+I denne sætning henvises til tabel \textbf{\ref{tab:tal}}.
+\clearpage
+
+\section{Kode listning}
+Man kan liste sin kode op på to forskellige måder, hvoraf den ene mulighed er gennem \textbf{lstlisting} og den anden mulighed er gennem \textbf{verbatim}.\\\\
+\textbf{Mulighed 1:}
+\begin{lstlisting}[language=Java]
+ public class ArrayListExample1{  
+ public static void main(String args[]){  
+  ArrayList<String> list=new ArrayList<String>();//Creating arraylist    
+      list.add("Mango");//Adding object in arraylist    
+      list.add("Apple");    
+      list.add("Banana");    
+      list.add("Grapes"); 
+      
+      //Printing the arraylist object   
+      System.out.println(list);  
+ }  
+}  
+\end{lstlisting}
+\vspace{1cm}
+\textbf{Mulighed 2: }
+\begin{verbatim}
+ public class ArrayListExample1{  
+ public static void main(String args[]){  
+  ArrayList<String> list=new ArrayList<String>();//Creating arraylist    
+      list.add("Mango");//Adding object in arraylist    
+      list.add("Apple");    
+      list.add("Banana");    
+      list.add("Grapes"); 
+      
+      //Printing the arraylist object   
+      System.out.println(list);  
+ }  
+}  
+\end{verbatim}
+\section{Matematisk}
+
+\subsection{Vis matematisk udtryk i sætning}
+Det er muligt at anvende matematiske udtryk i vores sætninger gennem \textbf{dollar-tegnet}, som gør udtrykket italic. Et eksempel på dette kunne være: $(x+3)$ (bemærk italic). 
+\subsection{Vis matematisk udtryk på separat linje}
+Det er muligt få sine matematiske udtryk på en separat linje ved at anvende 2 dollar tegn. Et eksempel på dette kunne være $$6x - 2 = 2x$$
+\subsection{Brøker, summering, produkt, limit}
+\subsubsection{Brøker}
+Ved anvendelse af brøker i en sætning skrive det således: \(\frac{1}{2}\). Derudover kan man vælge at lave en displaystyle og dermed vil det vises således: \( \displaystyle \frac{1}{2} \). Hvis man ønsker at brøkeren skal stå alene kan man vælge, at gå med 2 dollar tegn omkring: $$\frac{1}{2}$$
+\subsubsection{Summerings notation}
+Det er muligt at lave en summering (summation) notation således: $$\sum_{n=1}^{\infty} 2^{-n} = 1$$
+
+\subsubsection{Produkt notation}
+Det er muligt at lave en produkt notation således: $$\prod_{i=a}^{b} f(i)$$
+
+\subsubsection{Limit notation}
+Det er muligt at lave en limit notation således: $$\lim_{lower}$$
+
+\section{Bibliografi med bog, artikel og internet link}
+Den nemmeste måde at lave en bibliografi på er at anvende Google Scholor, som har al information skrevet i bibtex format.
+
+\subsection{Bog}
+Dette er en reference på bogen \textit{Discrete Matematics with Applications} \cite{koshy2004discrete}
+\subsection{Artikel}
+Dette er en reference på en internet artikel \cite{choy2003development}
+
+\subsection{Internet link}
+Dette er en reference på internet artiklen hos TV2 \cite{tv2}
+\clearpage
+\bibliographystyle{plain}
+\bibliography{Referencer}
+
+\end{document}
